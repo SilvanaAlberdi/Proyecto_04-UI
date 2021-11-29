@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1996815852548186683}
   - component: {fileID: 1996815852549284091}
   - component: {fileID: 738898354845119966}
+  - component: {fileID: 2458906639066358958}
   m_Layer: 0
   m_Name: Pizza
   m_TagString: Good
@@ -96,3 +97,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 0169642a95e8fce49b967cc4543bcdd8, type: 3}
+--- !u!114 &2458906639066358958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996815852551487035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbdfe9749b46c8499023ae838f5a837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

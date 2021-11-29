@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private float timeDestroy = 2f;
+    private float timeDestroy = 1f;
+    private GameManager gameManagerScript;
 
     void Start()
     {
         Destroy(gameObject, timeDestroy);
+
+        gameManagerScript = FindObjectOfType<GameManager>();
     }
 
     private void OnMouseDown()
@@ -20,5 +23,10 @@ public class Target : MonoBehaviour
         {
 
         }
+    }
+
+    private void OnDestroy()
+    {
+        gameManagerScript.targetPositions.Remove(transform.position);
     }
 }
