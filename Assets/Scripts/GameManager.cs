@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Vector3 randomSpawnPos;
     public List<Vector3> targetPositions;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
 
     private float minX = -3.75f;
     private float minY = -3.75f;
@@ -18,11 +19,16 @@ public class GameManager : MonoBehaviour
     private int numberRows = 4;
     private float spawnRate= 0.5f;
     private int score;
+    public int missCounter;
+    public int totalMisses = 3;
 
     private void Start()
     {
         StartCoroutine("SpawnRandomTarget");
         score = 0;
+        UpdateScore(0);
+        missCounter = 0;
+        gameOverText.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -60,5 +66,15 @@ public class GameManager : MonoBehaviour
         
     }
 
-    
+    public void UpdateScore(int pointsToAdd)
+    {
+        score += pointsToAdd;
+        scoreText.text = $"Score: {score}";
+    }
+
+    public void GameOver()
+    {
+        gameOver = true;
+        gameOverText.gameObject.SetActive(true);
+    }
 }
